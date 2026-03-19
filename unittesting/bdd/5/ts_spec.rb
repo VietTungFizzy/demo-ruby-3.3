@@ -42,5 +42,34 @@ RSpec.describe TennisScorer do
       ts.give_point_to(:server)
       expect(ts.score).to eq("W-L")
     end
+
+    it "is L-W after the receiver wins four points" do
+      ts.give_point_to(:receiver)
+      ts.give_point_to(:receiver)
+      ts.give_point_to(:receiver)
+      ts.give_point_to(:receiver)
+      expect(ts.score).to eq("L-W")
+    end
+
+    it "is Deuce after each wins three points" do
+      ts.give_point_to(:receiver)
+      ts.give_point_to(:receiver)
+      ts.give_point_to(:receiver)
+      ts.give_point_to(:server)
+      ts.give_point_to(:server)
+      ts.give_point_to(:server)
+      expect(ts.score).to eq("Deuce")
+    end
+
+    it "is Advantage-server after each wins three points and the server gets one more" do
+      ts.give_point_to(:receiver)
+      ts.give_point_to(:receiver)
+      ts.give_point_to(:receiver)
+      ts.give_point_to(:server)
+      ts.give_point_to(:server)
+      ts.give_point_to(:server)
+      ts.give_point_to(:server)
+      expect(ts.score).to eq("Advantage-server")
+    end
   end
 end
