@@ -1,0 +1,16 @@
+def delete(dir, pattern)
+  files = Dir["#{dir}/#{pattern}"]
+  rm(files, verbose: true) unless files.empty?
+end
+
+desc "Remove files whose names end with a tilde"
+task :delete_unix_backups, [:dir] do |t, args|
+  delete(args[:dir], "*~")
+end
+
+desc "Remove files with a .bak extension"
+task :delete_window_backups, [:dir] do |t, args|
+  delete(args[:dir], "*.bak")
+end
+
+task :delete_backups, [:dir] => [:delete_unix_backups, :delete_window_backups]

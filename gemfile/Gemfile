@@ -1,0 +1,15 @@
+source "https://rubygems.org" 
+
+ruby "3.3.9"
+
+gem "debug" 
+gem "i18n"
+gem "nokogiri" 
+gem "pry"
+gem "pry-byebug" 
+gem "rack"
+gem "rackup"
+gem "rspec"
+gem "solargraph" 
+gem "standard" 
+gem "yard"
