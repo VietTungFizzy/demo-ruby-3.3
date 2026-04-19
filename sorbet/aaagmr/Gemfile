@@ -1,0 +1,13 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+# Specify your gem's dependencies in aaagmr.gemspec
+gemspec
+
+gem "rake", "~> 13.0"
+gem "rspec", "~> 3.13"
+gem 'standard', '~> 1.54'
+gem "sorbet", group: :development
+gem "sorbet-runtime"
+gem "tapioca", require: false, group: :development
