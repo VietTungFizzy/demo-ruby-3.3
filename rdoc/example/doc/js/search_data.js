@@ -1,0 +1,1 @@
+var search_data = {"index":[{"name":"Counter","full_name":"Counter","type":"class","path":"Counter.html"},{"name":"new","full_name":"Counter::new","type":"class_method","path":"Counter.html#method-c-new"},{"name":"inc","full_name":"Counter#inc","type":"instance_method","path":"Counter.html#method-i-inc"}]};
